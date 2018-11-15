@@ -45,10 +45,6 @@ public class App {
 	public void test1() {
 		log.info("===> test1()");
 
-		for (Categorie categorie : categorieService.listCategories()) {
-			log.info(categorie);
-		}
-
 		categorieService.ajouterCategorie(new Categorie("Ordinateurs", "Ord"));
 		categorieService.ajouterCategorie(new Categorie("Imprimantes", "imp"));
 
@@ -59,10 +55,6 @@ public class App {
 
 	public void test2() {
 		log.info("===> test2()");
-
-		for (Produit produit : produitService.listProduits()) {
-			log.info(produit);
-		}
 
 		produitService.ajouterProduit(new Produit("HP45ERT", "HP7890", 6000, 50), 1L);
 		produitService.ajouterProduit(new Produit("AZERTY", "HP7890", 6000, 50), 1L);
