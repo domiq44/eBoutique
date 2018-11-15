@@ -3,16 +3,17 @@ package fr.domiq.app;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.stereotype.Component;
 
 import fr.domiq.bo.CategorieService;
 import fr.domiq.bo.InitDbService;
 import fr.domiq.bo.ProduitService;
+import fr.domiq.config.DataSourceConfig;
 import fr.domiq.entities.Categorie;
 import fr.domiq.entities.Produit;
 
-@Component
+@Configuration
 public class App {
 
 	private static Logger log = Logger.getLogger(App.class);
@@ -26,7 +27,7 @@ public class App {
 
 	public static void main(String[] args) {
 		log.info("===> main()");
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("fr.domiq");
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
 		App app = context.getBean(App.class);
 		// app.init();
 		app.test1();

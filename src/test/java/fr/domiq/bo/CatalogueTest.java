@@ -4,11 +4,10 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.BeansException;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -20,17 +19,14 @@ import fr.domiq.entities.Produit;
 @ContextConfiguration(classes = { DataSourceConfig.class })
 public class CatalogueTest {
 
-	private AnnotationConfigApplicationContext context;
-
-	@Before
-	public void setup() {
-		context = new AnnotationConfigApplicationContext("fr.domiq");
-	}
+	@Autowired
+	private CategorieService categorieService;
+	@Autowired
+	private ProduitService produitService;
 
 	@Test
 	public void test1() {
 		try {
-			CategorieService categorieService = context.getBean(CategorieService.class);
 			List<Categorie> listCategories = categorieService.listCategories();
 			categorieService.ajouterCategorie(new Categorie("Ordinateurs", "Ord"));
 			categorieService.ajouterCategorie(new Categorie("Imprimantes", "imp"));
@@ -44,7 +40,6 @@ public class CatalogueTest {
 	@Test
 	public void test2() {
 		try {
-			ProduitService produitService = context.getBean(ProduitService.class);
 			List<Produit> listProduits = produitService.listProduits();
 			produitService.ajouterProduit(new Produit("HP45ERT", "HP7890", 6000, 50), 1L);
 			produitService.ajouterProduit(new Produit("AZERTY", "HP7890", 6000, 50), 1L);
