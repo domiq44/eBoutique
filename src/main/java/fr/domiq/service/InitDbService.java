@@ -1,4 +1,4 @@
-package fr.domiq.bo;
+package fr.domiq.service;
 
 public interface InitDbService {
 	void dropTables();

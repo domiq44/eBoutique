@@ -1,4 +1,4 @@
-package fr.domiq.bo;
+package fr.domiq.service;
 
 import java.util.List;
 

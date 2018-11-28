@@ -14,6 +14,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import fr.domiq.config.MainConfig;
 import fr.domiq.entities.Categorie;
 import fr.domiq.entities.Produit;
+import fr.domiq.service.CategorieService;
+import fr.domiq.service.ProduitService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { MainConfig.class })

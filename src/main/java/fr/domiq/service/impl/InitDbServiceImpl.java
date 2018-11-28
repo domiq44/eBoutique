@@ -1,14 +1,14 @@
-package fr.domiq.bo.impl;
+package fr.domiq.service.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-import fr.domiq.bo.InitDbService;
+import fr.domiq.service.InitDbService;
 
-@Component
+@Service
 public class InitDbServiceImpl implements InitDbService {
 
 	private Logger log = LoggerFactory.getLogger(this.getClass());

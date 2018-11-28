@@ -1,16 +1,16 @@
-package fr.domiq.bo.impl;
+package fr.domiq.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.domiq.bo.ProduitService;
 import fr.domiq.dao.ProduitDao;
 import fr.domiq.entities.Produit;
+import fr.domiq.service.ProduitService;
 
-@Component
+@Service
 public class ProduitServiceImpl implements ProduitService {
 
 	@Autowired

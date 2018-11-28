@@ -7,12 +7,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.AbstractApplicationContext;
 
-import fr.domiq.bo.CategorieService;
-import fr.domiq.bo.InitDbService;
-import fr.domiq.bo.ProduitService;
 import fr.domiq.config.MainConfig;
 import fr.domiq.entities.Categorie;
 import fr.domiq.entities.Produit;
+import fr.domiq.service.CategorieService;
+import fr.domiq.service.InitDbService;
+import fr.domiq.service.ProduitService;
 
 @Configuration
 public class App {
@@ -34,7 +34,7 @@ public class App {
 		//
 		App app = context.getBean(App.class);
 		//
-		app.init();
+		// app.init();
 		app.testCategorie();
 		app.testProduit();
 	}

@@ -1,4 +1,4 @@
-It is a simple Spring JDBC project using H2 as database.
+It is a simple Spring JDBC project using H2 database and Hikari pool connection.
 
 There is no Spring XML file since configuration is done in Java (JavaConfig).
 
