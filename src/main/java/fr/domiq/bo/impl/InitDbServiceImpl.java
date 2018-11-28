@@ -1,6 +1,7 @@
 package fr.domiq.bo.impl;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -10,7 +11,7 @@ import fr.domiq.bo.InitDbService;
 @Component
 public class InitDbServiceImpl implements InitDbService {
 
-	private static Logger log = Logger.getLogger(InitDbServiceImpl.class);
+	private Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;

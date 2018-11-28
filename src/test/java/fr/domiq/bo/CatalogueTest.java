@@ -11,12 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import fr.domiq.config.DataSourceConfig;
+import fr.domiq.config.MainConfig;
 import fr.domiq.entities.Categorie;
 import fr.domiq.entities.Produit;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { DataSourceConfig.class })
+@ContextConfiguration(classes = { MainConfig.class })
 public class CatalogueTest {
 
 	@Autowired
@@ -25,7 +25,7 @@ public class CatalogueTest {
 	private ProduitService produitService;
 
 	@Test
-	public void test1() {
+	public void testCategorie() {
 		try {
 			List<Categorie> listCategories = categorieService.listCategories();
 			categorieService.ajouterCategorie(new Categorie("Ordinateurs", "Ord"));
@@ -38,7 +38,7 @@ public class CatalogueTest {
 	}
 
 	@Test
-	public void test2() {
+	public void testProduit() {
 		try {
 			List<Produit> listProduits = produitService.listProduits();
 			produitService.ajouterProduit(new Produit("HP45ERT", "HP7890", 6000, 50), 1L);
